@@ -5,7 +5,7 @@ class NovayaArticle:
 
     def __init__(self, file_structure, kp, category, proc_path):
         self.originally_posted = file_structure[0]
-        self.date = file_structure[1].split(': ')[1]
+        self.pub_date = file_structure[1].split(': ')[1]
         self.author = file_structure[2]
         self.content = file_structure[3:]
         self.kp = kp
@@ -87,10 +87,10 @@ def push_to_corpora(article_list):
 
     total_count = 0
     for art in article_list:
-        run_sql = "INSERT INTO novaya_gazeta (kp, date, author, original_post, content, category, ret_date) VALUES "
+        run_sql = "INSERT INTO novaya_gazeta (kp, pub_date, author, original_post, content, category, ret_date) VALUES "
 
         run_sql = "{0} (%s, %s, %s, %s, %s, %s, %s);".format(run_sql)
-        params = [art.kp, art.date, art.author, art.originally_posted, art.content[0], art.category, str(datetime.datetime.now())]
+        params = [art.kp, art.pub_date, art.author, art.originally_posted, art.content[0], art.category, str(datetime.datetime.now())]
         perform_sql(run_sql, params)
         total_count += 1
 
