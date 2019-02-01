@@ -2,6 +2,12 @@
 ETL script to load scraped content from the Novaya Gazeta into a database. Information is loaded onto the dev server via
 zip files, then extracted, moved, scraped, inserted into the novaya_gazeta table, and then deleted. 
 
+## Usage
+
+Place zip files, or unzipped text files within folders inside `novaya/dump/new` and run command `python /path/to/novaya_proc.py`. Messages will appear keeping you updated as to the status of the operation. Once the extraction and insertion is done, the script will terminate, the zip file will be moved to `novaya/dump/old` and all extracted files will be deleted. 
+
+Check for malformed files in `novaya/dump/processing/malformed` and report any errors. 
+
 ## Structure
 
 The file structure looks like this:
