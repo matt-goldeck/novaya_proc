@@ -4,7 +4,7 @@ zip files, then extracted, moved, scraped, inserted into the novaya_gazeta table
 
 ## Usage
 
-Place zip files, or unzipped text files within folders inside `novaya/dump/new` and run command `python /path/to/novaya_proc.py`. Messages will appear keeping you updated as to the status of the operation. Once the extraction and insertion is done, the script will terminate, the zip file will be moved to `novaya/dump/old` and all extracted files will be deleted. 
+Place zip files, or unzipped text files within a folder with the category's name, inside `novaya/dump/new` and run command `python /path/to/novaya_proc.py`. Messages will appear keeping you updated as to the status of the operation. Once the extraction and insertion is done, the script will terminate, the zip file will be moved to `novaya/dump/old` and all extracted files will be deleted. 
 
 Check for malformed files in `novaya/dump/processing/malformed` and report any errors. 
 
